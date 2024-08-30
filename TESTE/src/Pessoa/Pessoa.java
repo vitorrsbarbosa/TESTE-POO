@@ -1,9 +1,9 @@
 package Pessoa;
 
 public abstract class Pessoa implements Trabalhador {
-	private String nome;
-	private String funcao;
-	private boolean trabalhando;
+	protected String nome;
+	protected String funcao;
+	protected boolean trabalhando;
 
 	public String getNome( ) {
 		return nome;
@@ -29,22 +29,16 @@ public abstract class Pessoa implements Trabalhador {
 		this.trabalhando = trabalhando;
 	}
 
-	public Pessoa( String nome, String funcao, boolean trabalhando ) {
-		this.nome = nome;
-		this.funcao = funcao;
-		this.trabalhando = trabalhando;
+	public void realizarOperacaoNoBanco() {
+		System.out.println( "Ler relatórios..." );
 	}
 
 	@Override
 	public String toString( ) {
-		return "Pessoa: { \n" +
-				"        nome = '" + nome + '\'' + ",\n" +
-				"        funcao = '" + funcao + '\'' + ",\n" +
-				"        trabalhando = " + trabalhando  + ",\n" +
+		return "Pessoa{" +
+				"nome='" + nome + '\'' +
+				", funcao='" + funcao + '\'' +
+				", trabalhando=" + trabalhando +
 				'}';
-	}
-
-	public void realizarOperacaoNoBanco() {
-		System.out.println( "Ler relatórios..." );
 	}
 }
