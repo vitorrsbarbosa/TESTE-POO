@@ -1,18 +1,14 @@
 package Pessoa;
 
 public class Estagiario extends Pessoa {
-	private boolean jornadaReduzida;
-
-	public boolean isJornadaReduzida( ) {
-		return jornadaReduzida;
+	public Estagiario( String nome, TipoTrabalho tipoTrabalho ) {
+		super( nome, tipoTrabalho );
 	}
 
-	public void setJornadaReduzida( boolean jornadaReduzida ) {
-		this.jornadaReduzida = jornadaReduzida;
-	}
 	public void realizarOperacaoNoBanco( float valor) {
 		System.out.println( "Depositar R$" + valor + " na conta" );
 	}
+
 	public void realizarOperacaoBanco( boolean trabalhando) {
 		if( ! trabalhando && ! this.isTrabalhando( ) ) {
 			return;

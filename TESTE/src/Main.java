@@ -1,22 +1,17 @@
 import Pessoa.Estagiario;
 import Pessoa.Funcionario;
 import Pessoa.Gestor;
+import Pessoa.TipoTrabalho;
 
 public class Main {
 	public static void main( String[] args ) {
-		Gestor gestor = new Gestor( );
-		gestor.setNome( "Gilberto" );
-		gestor.setFuncao( "Gerente" );
+		Gestor gestor = new Gestor( "Giberlto", TipoTrabalho.GESTAO );
 		gestor.setTrabalhando( true );
 
-		Funcionario funcionario = new Funcionario( );
-		funcionario.setNome( "Fabio" );
-		funcionario.setFuncao( "Facilitador" );
+		Funcionario funcionario = new Funcionario( "Fabio", TipoTrabalho.FACILITADOR );
 		funcionario.setTrabalhando( false );
 
-		Estagiario estagiario = new Estagiario( );
-		estagiario.setNome( "Enrique" );
-		estagiario.setFuncao( "Entregador" );
+		Estagiario estagiario = new Estagiario( "Enrique", TipoTrabalho.ESTAGIO );
 		estagiario.setTrabalhando( true );
 
 		gestor.realizarOperacaoNoBanco( );

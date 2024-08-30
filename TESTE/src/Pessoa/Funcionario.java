@@ -1,6 +1,10 @@
 package Pessoa;
 
 public class Funcionario extends Pessoa {
+	public Funcionario( String nome, TipoTrabalho tipoTrabalho ) {
+		super( nome, tipoTrabalho );
+	}
+
 	@Override
 	public void realizarOperacaoNoBanco( ) {
 		System.out.println( "Extrair relatório de cobranças" );

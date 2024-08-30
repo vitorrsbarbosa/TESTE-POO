@@ -2,8 +2,13 @@ package Pessoa;
 
 public abstract class Pessoa implements Trabalhador {
 	protected String nome;
-	protected String funcao;
 	protected boolean trabalhando;
+	protected TipoTrabalho tipoTrabalho;
+
+	public Pessoa( String nome, TipoTrabalho tipoTrabalho ) {
+		this.setNome( nome );
+		this.setTipoTrabalho( tipoTrabalho );
+	}
 
 	public String getNome( ) {
 		return nome;
@@ -11,14 +16,6 @@ public abstract class Pessoa implements Trabalhador {
 
 	public void setNome( String nome ) {
 		this.nome = nome;
-	}
-
-	public String getFuncao( ) {
-		return funcao;
-	}
-
-	public void setFuncao( String funcao ) {
-		this.funcao = funcao;
 	}
 
 	public boolean isTrabalhando( ) {
@@ -29,6 +26,14 @@ public abstract class Pessoa implements Trabalhador {
 		this.trabalhando = trabalhando;
 	}
 
+	public TipoTrabalho getTipoTrabalho( ) {
+		return tipoTrabalho;
+	}
+
+	public void setTipoTrabalho( TipoTrabalho tipoTrabalho ) {
+		this.tipoTrabalho = tipoTrabalho;
+	}
+
 	public void realizarOperacaoNoBanco() {
 		System.out.println( "Ler relatórios..." );
 	}
@@ -37,7 +42,7 @@ public abstract class Pessoa implements Trabalhador {
 	public String toString( ) {
 		return "Pessoa{" +
 				"nome='" + nome + '\'' +
-				", funcao='" + funcao + '\'' +
+				", funcao='" + tipoTrabalho + '\'' +
 				", trabalhando=" + trabalhando +
 				'}';
 	}
