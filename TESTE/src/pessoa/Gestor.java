@@ -1,4 +1,4 @@
-package Pessoa;
+package pessoa;
 
 public class Gestor extends Pessoa{
 	public Gestor( String nome, TipoTrabalho tipoTrabalho ) {
@@ -18,6 +18,7 @@ public class Gestor extends Pessoa{
 			System.out.println( "Não está em jornada de trabalho no momento." );
 		}
 	}
+
 	public void realizarOperacaoNoBanco(float aumento,Pessoa funcionario){
 		System.out.println( "Promovendo funcionário " + funcionario.getNome() + " com um aumento de R$" + aumento + " no salário" );
 	}

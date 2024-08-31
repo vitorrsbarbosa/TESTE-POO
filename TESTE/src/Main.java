@@ -1,7 +1,7 @@
-import Pessoa.Estagiario;
-import Pessoa.Funcionario;
-import Pessoa.Gestor;
-import Pessoa.TipoTrabalho;
+import pessoa.Estagiario;
+import pessoa.Funcionario;
+import pessoa.Gestor;
+import pessoa.TipoTrabalho;
 
 public class Main {
 	public static void main( String[] args ) {
@@ -18,6 +18,10 @@ public class Main {
 		gestor.realizarOperacaoNoBanco( funcionario );
 		gestor.realizarOperacaoNoBanco( estagiario );
 		gestor.realizarOperacaoNoBanco( 240f, funcionario );
+		System.out.println( gestor.getCargo( ) );
+		System.out.println( funcionario.getCargo( ) );
+		System.out.println( estagiario.getCargo( ) );
+
 		System.out.println( "-------------------" );
 		funcionario.realizarOperacaoNoBanco();
 		funcionario.realizarOperacaoNoBanco( 25 );
@@ -27,8 +31,8 @@ public class Main {
 		estagiario.realizarOperacaoNoBanco( 33.3f );
 		estagiario.realizarOperacaoBanco( false );
 
-		System.out.println( gestor.toString() );
-		System.out.println( funcionario.toString() );
-		System.out.println( estagiario.toString() );
+		System.out.println( gestor );
+		System.out.println( funcionario );
+		System.out.println( estagiario );
 	}
 }

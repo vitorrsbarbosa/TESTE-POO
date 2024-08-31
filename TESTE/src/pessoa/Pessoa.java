@@ -1,13 +1,21 @@
-package Pessoa;
+package pessoa;
 
 public abstract class Pessoa implements Trabalhador {
 	protected String nome;
 	protected boolean trabalhando;
 	protected TipoTrabalho tipoTrabalho;
+	protected String cargo;
+	protected boolean recebeBolsa;
+	protected float salario;
 
 	public Pessoa( String nome, TipoTrabalho tipoTrabalho ) {
 		this.setNome( nome );
 		this.setTipoTrabalho( tipoTrabalho );
+		this.setCargo( tipoTrabalho.cargo );
+		this.setSalario( tipoTrabalho.salario );
+		if( this.getTipoTrabalho( ).equals( TipoTrabalho.ESTAGIO ) ) {
+			this.setRecebeBolsa( true );
+		}
 	}
 
 	public String getNome( ) {
@@ -34,6 +42,30 @@ public abstract class Pessoa implements Trabalhador {
 		this.tipoTrabalho = tipoTrabalho;
 	}
 
+	public float getSalario( ) {
+		return salario;
+	}
+
+	public void setSalario( float salario ) {
+		this.salario = salario;
+	}
+
+	public String getCargo( ) {
+		return cargo;
+	}
+
+	public void setCargo( String cargo ) {
+		this.cargo = cargo;
+	}
+
+	public boolean isRecebeBolsa( ) {
+		return recebeBolsa;
+	}
+
+	public void setRecebeBolsa( boolean recebeBolsa ) {
+		this.recebeBolsa = recebeBolsa;
+	}
+
 	public void realizarOperacaoNoBanco() {
 		System.out.println( "Ler relatórios..." );
 	}
@@ -42,8 +74,10 @@ public abstract class Pessoa implements Trabalhador {
 	public String toString( ) {
 		return "Pessoa{" +
 				"nome='" + nome + '\'' +
-				", funcao='" + tipoTrabalho + '\'' +
 				", trabalhando=" + trabalhando +
+				", tipoTrabalho=" + tipoTrabalho +
+				", cargo='" + cargo + '\'' +
+				", salario=" + salario +
 				'}';
 	}
 }

@@ -1,4 +1,4 @@
-package Pessoa;
+package pessoa;
 
 public class Estagiario extends Pessoa {
 	public Estagiario( String nome, TipoTrabalho tipoTrabalho ) {
@@ -11,9 +11,7 @@ public class Estagiario extends Pessoa {
 
 	public void realizarOperacaoBanco( boolean trabalhando) {
 		if( ! trabalhando && ! this.isTrabalhando( ) ) {
-			return;
 		} else if( trabalhando && this.isTrabalhando( ) ) {
-			return;
 		} else if( ! trabalhando && this.isTrabalhando( ) ) {
 			System.out.println( "Finalizando expediente" );
 		} else {
